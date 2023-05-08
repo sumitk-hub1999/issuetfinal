@@ -28,3 +28,31 @@ app.use("/", require("./server/routes/router"));
 app.listen(port, () => {
   console.log(`server is running on port http://localhost:${port}`);
 });
+var cookieParser = require("cookie-parser");
+const passport = require("passport");
+const passportlocal = require("./config/passport-local");
+const localPassport = require("passport-local").Strategy;
+app.use(express.static("assets"));
+app.use(express.urlencoded({ extended: true }));
+app.use(cookieParser());
+var expressLayouts = require("express-ejs-layouts");
+app.use(expressLayouts);
+
+app.set("view engine", "ejs");
+app.set("views", "./views");
+
+app.use(
+  session({
+    name: "skatyal1999",
+    secret: "skatyal1999",
+    saveUninitialized: false,
+    resave: false,
+
+    cookie: {
+      maxAge: 1000 * 60 * 100,
+    },
+  })
+);
+
+app.use(passport.initialize());
+app.use(passport.session());
