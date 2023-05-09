@@ -24,7 +24,7 @@ app.use("/css", express.static(path.resolve(__dirname, "assets/css")));
 app.use("/images", express.static(path.resolve(__dirname, "assets/images")));
 app.use("/script", express.static(path.resolve(__dirname, "assets/script")));
 //load routers
-app.use("/", require("./server/routes/router"));
+app.use("/", require("./routes"));
 app.listen(port, () => {
   console.log(`server is running on port http://localhost:${port}`);
 });
