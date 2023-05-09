@@ -1,0 +1,59 @@
+body {
+  background-color: rgb(226, 244, 226);
+  font-family: "Righteous", cursive;
+  font-family: "Shantell Sans", cursive;
+}
+
+.project {
+}
+
+.data {
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+  padding: 2%;
+}
+
+.data p {
+  margin-top: 2.5 vh;
+}
+
+.data p small {
+  font-size: 1.2rem;
+  padding: 0.5%;
+  margin-top: 20px;
+  font-weight: 800;
+}
+.title {
+  font-size: 1.2rem;
+  padding: 0.5%;
+  margin-top: 20px;
+  font-weight: 800;
+}
+
+.description {
+  border: 1px solid black;
+  width: 30vh;
+  height: 20vh;
+}
+
+.issues-list {
+  border: 2px solid black;
+  padding: 1%;
+  flex-direction: column;
+  margin-top: 2%;
+}
+
+.issues-list li {
+  list-style: none;
+}
+h1 {
+  text-align: center;
+}
+.filter-box {
+  margin-top: 2%;
+}
+
+section {
+  background-color: lightblue;
+}

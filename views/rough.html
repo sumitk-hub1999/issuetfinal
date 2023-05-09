@@ -14,7 +14,8 @@
     <link rel="stylesheet" href="/assets/css/style.css" />
     <link rel="stylesheet" href="/assets/css/header.css" />
 
-    <link rel="stylesheet" href="/assets/css/sign_up.css" />
+    <link rel="stylesheet" href="/assets/css/project.css" />
+    <link rel="stylesheet" href="/assets/css/create-issue.css" />
     <title>Random Title</title>
   </head>
   <body>
@@ -45,7 +46,7 @@
       </header>
     </div>
     <div class="project">
-      <div class="data-container">
+      <div class="data container">
         <p class="title">Project:</p>
         <p>projectName</p>
         <p class="title">Author:</p>
@@ -56,6 +57,139 @@
           despcription
         </p>
       </div>
+    </div>
+    <h1>Issues</h1>
+    <div class="accordian container">
+      <div id="flip"><i class="fa-solid fa-plus">Create Issue</i></div>
+      <div id="panel">
+        <!-- create issue form -->
+        <div class="main">
+          <form action="/project/createIssue" method="post">
+            <input type="text" placeholder="Title" name="title" />
+            <textarea
+              name="description"
+              id=""
+              placeholder="Description"
+              cols="30"
+              rows="10"
+            ></textarea>
+
+            <label for="labels" class="col-sm-4 col-form-label"
+              >Add Labels</label
+            >
+
+            <div class="select">
+              <input
+                class="form-check-input"
+                name="labels"
+                type="checkbox"
+                value="Bug"
+                id="bug"
+              />
+              <input type="hidden" name="project" value="" />
+              <label class="form-check-label" for="bug"> Bug </label
+              ><br /><input
+                name="labels"
+                class="form-check-input"
+                type="checkbox"
+                value="UI Improvement"
+                id="ui-improvement"
+              />
+              <label class="form-check-label" for="ui-improvement">
+                UI Improvement </label
+              ><br /><input
+                name="labels"
+                class="form-check-input"
+                type="checkbox"
+                value="Documentation"
+                id="documentation"
+              />
+              <label class="form-check-label" for="documentation">
+                Documentation </label
+              ><br /><input
+                name="labels"
+                class="form-check-input"
+                type="checkbox"
+                value="Enhancement"
+                id="enhancement"
+              />
+              <label class="form-check-label" for="enhancement">
+                Enhancement </label
+              ><br /><input
+                name="labels"
+                class="form-check-input"
+                type="checkbox"
+                value="Duplicate"
+                id="duplicate"
+              />
+              <label class="form-check-label" for="duplicate">
+                Duplicate
+              </label>
+            </div>
+            <div class="lst">
+              <input type="text" name="author" placeholder="Author" />
+              <input type="submit" id="isbtn" value="create issue" />
+            </div>
+
+            <p>%= open_projects._id %</p>
+          </form>
+        </div>
+        <div class="container filter-box">
+          <div>
+            <input
+              type="text"
+              id="myInput"
+              onkeyup="myFunction()"
+              placeholder="filter issues"
+              title="filter issues"
+            />
+          </div>
+
+          <div>
+            <form>
+              <label
+                ><input type="checkbox" name="fl-colour" id="Bug" /> Bug</label
+              ><br />
+              <label
+                ><input type="checkbox" name="fl-colour" id="UI Improvement" />
+                UI Improvement</label
+              ><br />
+              <label
+                ><input type="checkbox" name="fl-colour" id="Documentation" />
+                Documentation</label
+              ><br />
+              <label
+                ><input type="checkbox" name="fl-colour" id="Enhancement" />
+                Enhancement</label
+              ><br />
+              <label
+                ><input type="checkbox" name="fl-colour" id="Duplicate" />
+                Duplicate</label
+              ><br />
+            </form>
+          </div>
+        </div>
+      </div>
+      <section id="UL" class="container">
+        <ul class="issues-list">
+          <li style="display: flex">
+            <span>Title:</span>
+            <p>title</p>
+          </li>
+          <li style="display: flex">
+            <span>Description:</span>
+            <p class="description">description</p>
+          </li>
+          <li style="display: flex">
+            <span>Author:</span>
+            <p>author</p>
+          </li>
+          <li class="labels" style="display: flex">
+            <span>labels:</span>
+            <p id="lab" data-category="">description</p>
+          </li>
+        </ul>
+      </section>
     </div>
   </body>
 </html>

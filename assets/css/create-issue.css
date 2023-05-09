@@ -1,0 +1,17 @@
+body {
+  font-family: "Righteous", cursive;
+  font-family: "Shantell Sans", cursive;
+}
+
+.main {
+  border: 2px solid black;
+  display: flex;
+  flex-direction: column;
+}
+
+.main form {
+  display: flex;
+  flex-direction: column;
+  padding: 2%;
+  align-items: center;
+}
