@@ -1,12 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+      integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link rel="stylesheet" href="/assets/css/style.css" />
+    <link rel="stylesheet" href="/assets/css/header.css" />
+
+    <link rel="stylesheet" href="/assets/css/project.css" />
+
+    <title>Random Title</title>
+  </head>
+  <body>
+    <%- include('header') %>
+
+    <div class="project">
+      <div class="data container">
+        <p class="title">Project:</p>
+        <p>projectName</p>
+        <p class="title">Author:</p>
+        <p>authorName</p>
+        <p>Issue</p>
+        <p>
+          <small class="title">Project Description</small>open projects
+          despcription
+        </p>
+      </div>
+    </div>
+    <h1>Issues</h1>
+    <div class="accordion container">
+      <div id="flip"><i class="fa-solid fa-plus">Create Issue</i></div>
+      <div id="panel">
+        <!-- create issue form -->
+        <%- include('create-issue') %>
+      </div>
+      <div class="container filter-box">
+        <div>
+          <input
+            type="text"
+            id="myInput"
+            onkeyup="myFunction()"
+            placeholder="filter issues"
+            title="filter issues"
+          />
+        </div>
+
+        <div>
+          <form>
+            <label
+              ><input type="checkbox" name="fl-colour" id="Bug" /> Bug</label
+            ><br />
+            <label
+              ><input type="checkbox" name="fl-colour" id="UI Improvement" /> UI
+              Improvement</label
+            ><br />
+            <label
+              ><input type="checkbox" name="fl-colour" id="Documentation" />
+              Documentation</label
+            ><br />
+            <label
+              ><input type="checkbox" name="fl-colour" id="Enhancement" />
+              Enhancement</label
+            ><br />
+            <label
+              ><input type="checkbox" name="fl-colour" id="Duplicate" />
+              Duplicate</label
+            ><br />
+          </form>
+        </div>
+      </div>
+    </div>
+    <section id="UL" class="container">
+      <ul class="issues-list">
+        <li style="display: flex">
+          <span>Title:</span>
+          <p>title</p>
+        </li>
+        <li style="display: flex">
+          <span>Description:</span>
+          <p class="description">description</p>
+        </li>
+        <li style="display: flex">
+          <span>Author:</span>
+          <p>author</p>
+        </li>
+        <li class="labels" style="display: flex">
+          <span>labels:</span>
+          <p id="lab" data-category="">description</p>
+        </li>
+      </ul>
+    </section>
+
+    <script src="/assets/js/add_project_dialogue.js"></script>
+    <script src="/assets/js/search_issue.js"></script>
+    <script src="/assets/js/show_all.js"></script>
+    <script src="/assets/js/test_script.js"></script>
+    <script src="/assets/js/test_script2.js"></script>
+  </body>
 </html>
